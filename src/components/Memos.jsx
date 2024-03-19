@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 
 const Memos = ({ state }) => {
     const [memos, setMemos] = useState([]);
+    const [timestamp, setTimestamp] = useState(null);
+    const [formattedTime, setFormattedTime] = useState(null);
+
     const { contract } = state;
     useEffect(() => {
         const memosState = async () => {
@@ -19,6 +22,10 @@ const Memos = ({ state }) => {
         memosState();
     })
 
+    const formatTimestamp = (timestamp) => {
+        const date = new Date(Number(timestamp) * 1000);
+        return date.toLocaleString();
+    };
     return (
         <>
             {memos.length > 0 &&
@@ -40,7 +47,7 @@ const Memos = ({ state }) => {
                                     <td className='border border-gray-700 px-6  text-sm py-3'>{mem.name}</td>
                                     <td className='border border-gray-700 px-6  text-sm py-3'>{mem.message}</td>
                                     <td className='border border-gray-700 px-6  text-sm py-3'>{mem.from}</td>
-                                    <td className='border border-gray-700 px-6  text-sm py-3'>{String(mem.timestamp)}</td>
+                                    <td className='border border-gray-700 px-6  text-sm py-3'>{formatTimestamp(mem.timestamp)}</td>
                                 </tr>
                             ))}
                         </tbody>

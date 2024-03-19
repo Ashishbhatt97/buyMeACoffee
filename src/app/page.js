@@ -53,8 +53,11 @@ export default function page() {
         connectWallet();
     }, []);
 
-    console.log(state)
     return <div className="flex items-center justify-center p-4 flex-col w-full h-full">
+        <div className="w-full flex">
+
+            <div className="text-right">Wallet Connected : <span className="text-yellow-300">{account}</span> </div>
+        </div>
         <Buy state={state} />
         <Memos state={state} />
     </div>;

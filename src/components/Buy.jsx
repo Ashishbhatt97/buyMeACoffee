@@ -29,10 +29,10 @@ const Buy = ({ state }) => {
             </div>
             <div>
                 <form onSubmit={handleSubmit}>
-                    <div className='flex flex-col gap-3 w-[450px]'>
+                    <div className='flex flex-col gap-3 w-[650px]'>
 
                         <label htmlFor="name" className='text-sm'>Name</label>
-                        <input type="text" id='name' onChange={(e) => setName(e.target.value)} placeholder='enter your name' className='bg-black  outline-1 border border-gray-700 py-2 pl-2 pr-16 rounded-md placeholder:text-xs placeholder:text-left placeholder:text-gray-600 text-sm' />
+                        <input type="text" id='name' onChange={(e) => setName(e.target.value)} placeholder='enter name' className='bg-black  outline-1 border border-gray-700 py-2 pl-2 pr-16 rounded-md placeholder:text-xs placeholder:text-left placeholder:text-gray-600 text-sm' />
 
                         <label htmlFor="name" className='text-sm'>Message</label>
                         <textarea rows={5} cols={7} onChange={(e) => setMessage(e.target.value)} type="text" id='Message' placeholder='enter your message' className='bg-black outline-1 border border-gray-700 py-2 pl-2 pr-16 rounded-md placeholder:text-xs placeholder:text-left placeholder:text-gray-600 text-sm' />
